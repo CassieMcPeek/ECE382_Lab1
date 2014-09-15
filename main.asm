@@ -22,7 +22,7 @@ Program:	.byte		0x22, 0x11, 0x22, 0x22, 0x33, 0x33, 0x08, 0x44, 0x08, 0x22, 0x09
 
 Results:	.space 50
 
-Add:	.equ	0x11
+Add:	.equ	0x11			; Set all constants
 Sub:	.equ	0x22
 Mul:	.equ	0x33
 Clr:	.equ	0x44
@@ -42,10 +42,10 @@ StopWDT     mov.w   #WDTPW|WDTHOLD,&WDTCTL  ; Stop watchdog timer
 ;-------------------------------------------------------------------------------
                                             ; Main loop here
 ;-------------------------------------------------------------------------------
-			mov.w 	#Program, r5
+			mov.w 	#Program, r5		; place the code from program defined above into register 5
 			mov.b 	@r5, r6
 			mov.b 	@r5, r9
-			mov.w	#Results, r8
+			mov.w	#Results, r8		; stores the results into register 8
 
 Start		inc r5				; r7 stores operations
 			mov.b 	@r5, r7
@@ -62,18 +62,18 @@ Start		inc r5				; r7 stores operations
 
 		    jmp		forever
 
-Addition	inc		r5
-			mov.b	@r5, r6
+Addition	inc		r5				; performs addition operation
+			mov.b	@r5, r6			; r6 and r9 store operators
 			add.b	r6,	 r9
-			jc		store_255
+			jc		store_255		; used for B functionality to set max at 255, tests if larger than capacity
 			mov.b	r9, 0(r8)
 			inc		r8
 			jmp		Start
 
-Subtract	inc		r5
+Subtract	inc		r5				; performs subtraction operation
 			mov.b	@r5, r6
 			sub.b 	r6,  r9
-			jlo		store_0
+			jlo		store_0			; utilizes jump if lower command to set min to zero, tests if lower than zero
 
 Capacity
 			mov.b	r9, 0(r8)
@@ -89,7 +89,7 @@ Multi		inc		r5
 
 again		add.b	r9, r10
 			jc		store_255
-			inc		r11
+			inc		r11			; r11 is in the counter
 			cmp		r11, r6
 			jz		store
 			jmp		again
