@@ -12,5 +12,7 @@ Below is a picture of my pseudocode done in my class notebook. It was discussed 
 
 
 # Debugging
+  
+  For the program, I began my using my psuedocode and the lesson 6 handout to help me with the format and syntax of this program. I also referenced the textbook (MSP430 Microcontroller Basics) to review the different jump functions. Once I felt I had a good program, I ran the basic tests on it and found that there was a problem with the clr_op operation. I then put multiple breakpoints in the program and stepped through each step. After a few times, I realized that the issue was actually in the addition operation section of my code. Originally, I moved the value from register 5 to register 9 and then added the value from register 6 to register 9. That was incorrect, what I needed to do was move the value from register 5 into register 6 and then add the values from register 6 to register 9. Once I made that fix, all of the test cases worked.
 
   
