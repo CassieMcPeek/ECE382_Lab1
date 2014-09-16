@@ -27,6 +27,8 @@ Below is a picture of my pseudocode done in my class notebook. It was discussed 
     
 
 # Conclusion:
+
+  This lab required that we create a code that performed simple mathematical operations. As I was working through it, the code for the addition and subtraction operations were relatively straight forward and didn't cause any problems. As I got further in, the clear operation caused some issues, which then caused me to recieve the wrong answer for my B and A functionalities. Once I made the fix for the clear operation, which was a simple register change, then I was able to get the correct answers for all functionalities. I did also learn a new jump function, jlo, from the textbook. I previously had used the jc command, which was not wrong, but the jlo command was more efficient. I learned a lot from this lab, including the .byte command and the .equ command. It also reinforced my knowledge of which registers can be utilized for various commands. This lab was a good introduction for me into assembly code. 
     
     
 Documentation: C2C Ian Goodbody assisted me with debugging by showing me how to step through the program by single steps to find where the issue was at. 
