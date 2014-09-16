@@ -1,7 +1,11 @@
 ;-------------------------------------------------------------------------------
 ; MSP430 Assembler Code Template for use with TI Code Composer Studio
+;		Lab 1 - Assembly Language - "A Simple Calculator"
+;		C1C Cassie McPeek
+;		ECE 382 - T5
 ;
-;
+;		Input: Program .byte
+;		Output: Results in address 0x0200
 ;-------------------------------------------------------------------------------
             .cdecls C,LIST,"msp430.h"       ; Include device header file
 
